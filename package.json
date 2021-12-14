@@ -12,7 +12,7 @@
     "zip": "cp -R dist/ \"$npm_package_name\" && zip \"$npm_package_name\"-\"$npm_package_version\".zip \"$npm_package_name\" -r -m -x \"node_modules/*\" -x \".git/*\"",
     "md5": "md5 -r \"$npm_package_name\"-\"$npm_package_version\".zip>\"$npm_package_name\"-\"$npm_package_version\".zip.md5",
     "compress": "rm \"$npm_package_name\"* || true && npm run zip && npm run md5",
-    "package":"yarn zip && yarn md5 && yarn compress",
+    "package": "yarn zip && yarn md5 && yarn compress",
     "sign": "grafana-toolkit plugin:sign"
   },
   "author": "yoziru",
