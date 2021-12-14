@@ -7,16 +7,41 @@
     "test": "grafana-toolkit plugin:test",
     "dev": "grafana-toolkit plugin:dev",
     "watch": "grafana-toolkit plugin:dev --watch",
-    "sign": "grafana-toolkit plugin:sign",
-    "start": "yarn watch"
+    "lint": "eslint --cache --ignore-path ./.gitignore --ext .js,.jsx,.ts,.tsx ./src",
+    "lint:fix": "yarn lint --fix",
+    "zip": "cp -R dist/ \"$npm_package_name\" && zip \"$npm_package_name\"-\"$npm_package_version\".zip \"$npm_package_name\" -r -m -x \"node_modules/*\" -x \".git/*\"",
+    "md5": "md5 -r \"$npm_package_name\"-\"$npm_package_version\".zip>\"$npm_package_name\"-\"$npm_package_version\".zip.md5",
+    "compress": "rm \"$npm_package_name\"* || true && npm run zip && npm run md5",
+    "package":"yarn zip && yarn md5 && yarn compress",
+    "sign": "grafana-toolkit plugin:sign"
   },
   "author": "yoziru",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@grafana/data": "latest",
-    "@grafana/toolkit": "latest",
-    "@grafana/ui": "latest",
-    "emotion": "10.0.27"
+    "@grafana/data": "^8.3.2",
+    "@grafana/toolkit": "^8.3.2",
+    "@grafana/ui": "^8.3.2",
+    "@types/echarts": "^4.9.12",
+    "@types/react": "^17.0.37",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.4.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsdoc": "^37.2.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.0.6",
+    "prettier": "^2.5.1",
+    "tslib": "2.3.1"
+  },
+  "dependencies": {
+    "@emotion/css": "^11.7.1",
+    "echarts": "^5.2.2",
+    "echarts-for-react": "^3.0.2",
+    "echarts-gl": "^2.0.8"
   },
   "engines": {
     "node": ">=14"

@@ -7,7 +7,7 @@
     "description": "3D line and scatter charts",
     "author": {
       "name": "yoziru",
-      "url": ""
+      "url": "https://github.com/yoziru/yoziru-3dseries-panel"
     },
     "keywords": [
       "3D",
@@ -22,14 +22,23 @@
     "links": [
       {
         "name": "Website",
-        "url": "https://github.com/grafana/grafana-starter-panel"
+        "url": "https://github.com/yoziru/yoziru-3dseries-panel"
       },
       {
         "name": "License",
-        "url": "https://github.com/grafana/grafana-starter-panel/blob/master/LICENSE"
+        "url": "https://github.com/yoziru/yoziru-3dseries-panel/blob/master/LICENSE"
       }
     ],
-    "screenshots": [],
+    "screenshots": [
+      {
+        "name": "3D line chart",
+        "path": "img/screenshot_line3D.png"
+      },
+      {
+        "name": "3D scatter chart",
+        "path": "img/screenshot_scatter3D.png"
+      }
+    ],
     "version": "%VERSION%",
     "updated": "%TODAY%"
   },
